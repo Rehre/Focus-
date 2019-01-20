@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body {
+        margin: 0px;
+        padding: 0px 20px;
+        width: 300px;
+        height: 100px;
+      }
+
+      .container {
+        padding: 10px 0px;
+      }
+
+      #set-timeout,
+      #set-url {
+        padding: 5px;
+      }
+
+      #message {
+        color: red;
+        font-weight: 300;
+        font-size: 14px;
+        margin: 2px 0px;
+      }
+
+      #distraction-pages-list ul {
+        margin: 0px;
+      }
+
+      #distraction-pages-list li {
+        font-size: 14px;
+        position: relative;
+        margin-top: 10px;
+        margin-left: -40px;
+        list-style: none;
+        padding: 10px;
+        background-color: #ecf0f1;
+      }
+
+      #distraction-pages-list li:hover {
+        background-color: #d5d6d6;
+      }
+
+      button {
+        margin: 10px 0px;
+        border: none;
+        background-color: #3498db;
+        padding: 10px;
+        color: white;
+        box-shadow: 0px 0.5px 0.5px silver;
+        font-weight: 600;
+        outline: none;
+      }
+
+      button:hover {
+        cursor: pointer;
+        background-color: #2980b9;
+      }
+
+      .delete-url {
+        width: 60px;
+        height: 30px;
+        text-align: center;
+        font-size: 10px;
+        position: absolute;
+        right: 5px;
+        top: 5px;
+        margin: 0px;
+        background-color: #e74c3c;
+      }
+      
+      .delete-url:hover {
+        background-color: #c0392b;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Focus!</h1>
+      Set timeout interval: <input type="number" id="set-timeout" />
+      <button type="button" id="button-set-interval">
+        SET TIMEOUT INTERVAL</button
+      ><br />
+      <span id="message"></span>
+      <div class="distraction-url-list-container">
+        <h2>Distraction url</h2>
+        Add URL: <input type="text" id="set-url" />
+        <button type="button" id="button-set-url">ADD URL</button><br />
+        <ul id="distraction-pages-list"></ul>
+      </div>
+    </div>
+    <script src="/js/index.js"></script>
+  </body>
+</html>

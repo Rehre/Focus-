@@ -1,0 +1,14 @@
+{
+  "manifest_version": 2,
+  "name": "Focus!",
+  "version": "0.0.1",
+  "description": "Keep out distraction by automatically setting timer when you go into social media. and will close it automatically if the timer is up",
+  "browser_action": {
+    "default_popup": "index.html"
+  },
+  "background": {
+    "scripts": ["background/init.js", "background/watch.js"],
+    "persistent": false
+  },
+  "permissions": ["storage", "tabs"]
+}
