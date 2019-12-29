@@ -4,6 +4,16 @@ const listContainerDistractionPages = document.getElementById(
 const addUrlInput = document.getElementById("set-url");
 const addUrlButton = document.getElementById("button-set-url");
 
+function deleteUrlFromsStorage(willDeleteUrl, cb) {
+  chrome.storage.sync.get(["userDistractionPages"], result => {
+    const listUrl = result.userDistractionPages.filter(
+      item => item !== willDeleteUrl
+    );
+
+    chrome.storage.sync.set({ userDistractionPages: listUrl }, cb);
+  });
+}
+
 chrome.storage.sync.get(["userDistractionPages"], result => {
   result.userDistractionPages.forEach(item => {
     const listElement = document.createElement("li");
@@ -48,12 +58,3 @@ addUrlButton.addEventListener("click", () => {
   });
 });
 
-function deleteUrlFromsStorage(willDeleteUrl, cb) {
-  chrome.storage.sync.get(["userDistractionPages"], result => {
-    const listUrl = result.userDistractionPages.filter(
-      item => item !== willDeleteUrl
-    );
-
-    chrome.storage.sync.set({ userDistractionPages: listUrl }, cb);
-  });
-}
